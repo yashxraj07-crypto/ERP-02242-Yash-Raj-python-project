@@ -18,7 +18,7 @@ def load_tasks():
                     continue
                 if "|" in line:
                     title, status = line.rsplit("|", 1)
-                else:                       # tolerate a badly formed line
+                else:                       
                     title, status = line, PENDING
                 status = DONE if status.strip() == DONE else PENDING
                 tasks.append({"title": title.strip(), "status": status})
@@ -102,8 +102,8 @@ def show_menu():
 
 
 def main():
-    tasks = load_tasks()            # load at start
-    while True:                     # loop-driven menu
+    tasks = load_tasks()            
+    while True:                     
         show_menu()
         choice = input("Enter your choice (1-5): ").strip()
         if choice == "1":
